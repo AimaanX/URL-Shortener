@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snip — URL Shortener</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Star field canvas sits behind everything -->
+  <canvas id="stars"></canvas>
+
+  <div class="app">
+
+    <!-- TWO-COLUMN LAYOUT: logo left, content right -->
+    <div class="layout">
+
+      <!-- LEFT COLUMN: Logo -->
+      <aside class="sidebar">
+        <h1 class="logo">snip.</h1>
+        <p class="tagline">Shorten.<br>Share.<br>Simple.</p>
+      </aside>
+
+      <!-- RIGHT COLUMN: Everything else -->
+      <div class="content">
+
+        <!-- MAIN INPUT SECTION -->
+        <main class="main">
+          <div class="input-card">
+            <input
+              type="text"
+              id="url-input"
+              class="url-input"
+              placeholder="Paste a long URL here..."
+              autocomplete="off"
+              spellcheck="false"
+            />
+            <button id="shorten-btn" class="shorten-btn">Shorten</button>
+          </div>
+
+          <!-- RESULT (hidden until a URL is shortened) -->
+          <div class="result" id="result" hidden>
+            <span id="short-url" class="short-url"></span>
+            <button id="copy-btn" class="copy-btn">Copy</button>
+          </div>
+        </main>
+
+        <!-- HISTORY SECTION -->
+        <section class="history" id="history">
+          <h2 class="history-title">Recent Links</h2>
+          <ul class="history-list" id="history-list">
+            <!-- Populated by script.js -->
+          </ul>
+        </section>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Only one script tag — make sure this matches your filename exactly -->
+  <script src="script.js"></script>
+</body>
+</html>
